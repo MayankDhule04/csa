@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# .gitignore — keeps Terraform state, secrets, and local artefacts out of Git.
+# ---------------------------------------------------------------------------
+
+# Local .terraform directories (providers, modules, plugin cache)
+**/.terraform/*
+**/.terraform.lock.hcl.bak
+
+# Terraform state (may contain sensitive values — NEVER commit)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# Variable files with real/potentially sensitive values.
+# The committed example file (terraform.tfvars.example) is intentionally kept.
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Plan output files
+*.tfplan
+tfplan
+plan.out
+
+# Override files (local experimentation)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI config that may contain credentials
+.terraformrc
+terraform.rc
+
+# AWS credentials — must never be in the repo
+.aws/
+credentials
+*.pem
+*.ppk
+
+# Environment files
+.env
+.env.*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/

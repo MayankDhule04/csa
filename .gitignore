@@ -1,0 +1,30 @@
+# Top-level ignores for the course repository.
+# (Per-project rules also live in unit 1/.gitignore.)
+
+# Local archive of the project — not source, don't publish.
+*.zip
+
+# Terraform artifacts (defense in depth; also covered per-project)
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+plan.out
+plan.json
+tfplan.bin
+
+# Secrets / credentials — never commit
+*.tfvars
+!*.tfvars.example
+.env
+.env.*
+*.pem
+*.ppk
+.aws/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
